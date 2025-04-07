@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bireuenvape - Vape Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs" defer></script>
+    <style>
+      @keyframes fade-in-up {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-fade-in-up {
+        animation: fade-in-up 1s ease-out;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 text-gray-800">
+    <!-- Navbar -->
+    <nav class="bg-white shadow p-4 flex justify-between items-center sticky top-0 z-50">
+      <div class="flex items-center space-x-4">
+        <img src="./IMG_3873.png" alt="Bireuenvape Logo" class="h-12 w-auto">
+        <h1 class="text-xl font-bold text-purple-600">Bireuenvape</h1>
+      </div>
+      <a href="#order" class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition">Pesan Sekarang</a>
+    </nav>
+
+    <!-- Hero -->
+    <section class="text-center py-20 bg-gradient-to-r from-purple-600 to-indigo-700 text-white">
+      <div class="max-w-xl mx-auto animate-fade-in-up">
+        <h2 class="text-5xl font-extrabold mb-4">Selamat Datang di Bireuenvape</h2>
+        <p class="text-lg mb-6">Temukan berbagai varian vape & liquid terbaik dari merek ternama!</p>
+        <a href="#produk" class="bg-white text-purple-700 font-semibold px-6 py-3 rounded shadow hover:bg-purple-100 transition">Lihat Produk</a>
+      </div>
+    </section>
+
+    <!-- Produk -->
+    <section id="produk" class="max-w-6xl mx-auto py-16 px-4">
+      <h3 class="text-3xl font-bold mb-10 text-center text-purple-700">Produk  Pilihan</h3>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Produk 1 -->
+        <div class="bg-white p-6 shadow-lg rounded-lg transform hover:scale-105 transition">
+          
+          <h4 class="font-bold text-xl mb-2">NOVA AIO</h4>
+          <p class="text-purple-600 font-semibold">Rp 780.000</p>
+          <a href="https://wa.me/6282277121630?text=Halo%20saya%20ingin%20pesan%20NOVA%20AIO" target="_blank" class="block mt-4 text-center bg-purple-600 text-white py-2 rounded hover:bg-purple-700">Beli via WhatsApp</a>
+          <img src="./d3201b98-9f71-43f6-aa49-7eb58721cdcf.jpeg" alt="NOVA AIO" class="mt-4 rounded shadow">
+        </div>
+
+        <!-- Produk 2 -->
+        <div class="bg-white p-6 shadow-lg rounded-lg transform hover:scale-105 transition">
+          
+          <h4 class="font-bold text-xl mb-2">XLIM Pro2</h4>
+          <p class="text-purple-600 font-semibold">Rp 320.000</p>
+          <a href="https://wa.me/6282277121630?text=Halo%20saya%20ingin%20pesan%20OXVA%20XLIM%20Pro2" target="_blank" class="block mt-4 text-center bg-purple-600 text-white py-2 rounded hover:bg-purple-700">Beli via WhatsApp</a>
+        </div>
+
+        <!-- Produk 3 -->
+        <div class="bg-white p-6 shadow-lg rounded-lg transform hover:scale-105 transition">
+          
+          <h4 class="font-bold text-xl mb-2">TRML T200</h4>
+          <p class="text-purple-600 font-semibold">Rp 600.000</p>
+          <a href="https://wa.me/6282277121630?text=Halo%20saya%20ingin%20pesan%20TRML" target="_blank" class="block mt-4 text-center bg-purple-600 text-white py-2 rounded hover:bg-purple-700">Beli via WhatsApp</a>
+          <img src="./IMG_3543.jpeg" alt="Artio Collection" class="mt-4 rounded shadow">
+        </div>
+      </div>
+    </section>
+
+    <!-- Form Order / CTA -->
+    <section id="order" class="bg-gradient-to-r from-indigo-700 to-purple-700 py-16 px-4 text-center text-white">
+      <h3 class="text-3xl font-bold mb-4">Ingin Order Cepat?</h3>
+      <p class="mb-6">Klik tombol di bawah untuk langsung order via WhatsApp</p>
+      <a href="https://wa.me/6282277121630?text=Halo%20saya%20ingin%20order%20produk%20dari%20Bireuenvape" target="_blank" class="bg-green-500 text-white px-6 py-3 rounded hover:bg-green-600 transition">Chat Sekarang</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white text-center py-6">
+      <p>&copy; 2025 Bireuenvape. All rights reserved.</p>
+      <p>Instagram: <a href="https://instagram.com/bireuenvape" target="_blank" class="underline">@bireuenvape</a> | WhatsApp: +62 822-7712-1630</p>
+    </footer>
+  </body>
+</html>

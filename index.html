@@ -4,35 +4,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Bireuenvape - Toko vape terpercaya dengan berbagai pilihan pod, mod, AIO, liquid dan aksesoris vape terbaik." />
+    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
     <title>Bireuenvape - Vape Store</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/alpinejs" defer></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <style>
       @keyframes fade-in-up {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
       }
-      .animate-fade-in-up {
-        animation: fade-in-up 1s ease-out;
-      }
+      .animate-fade-in-up { animation: fade-in-up 1s ease-out; }
+      .glow { box-shadow: 0 0 15px rgba(168, 85, 247, 0.7); transition: box-shadow 0.3s ease-in-out; }
+      .glow:hover { box-shadow: 0 0 25px rgba(139, 92, 246, 1); }
     </style>
   </head>
-  <body class="bg-gray-50 text-gray-800">
+  <body class="bg-gray-50 text-gray-800" x-data="shopData()">
     <!-- Navbar -->
     <nav class="bg-white shadow p-4 flex justify-between items-center sticky top-0 z-50">
       <div class="flex items-center space-x-4">
         <img src="./IMG_3873.png" alt="Bireuenvape Logo" class="h-12 w-auto">
         <h1 class="text-xl font-bold text-purple-600">Bireuenvape</h1>
       </div>
-      <a href="#order" class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition">Pesan Sekarang</a>
+      <div class="hidden md:flex space-x-4">
+        <a href="#tentang" class="text-purple-700 font-semibold hover:underline">Tentang</a>
+        <a href="#kategori" class="text-purple-700 font-semibold hover:underline">Kategori</a>
+        <a href="#testimoni" class="text-purple-700 font-semibold hover:underline">Testimoni</a>
+        <a href="#dashboard" class="text-purple-700 font-semibold hover:underline">Dashboard</a>
+        <a href="https://wa.me/6282277121630" target="_blank" class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition glow">Pesan Sekarang</a>
+      </div>
     </nav>
 
     <!-- Hero -->
@@ -40,60 +44,120 @@
       <div class="max-w-xl mx-auto animate-fade-in-up">
         <h2 class="text-5xl font-extrabold mb-4">Selamat Datang di Bireuenvape</h2>
         <p class="text-lg mb-6">Temukan berbagai varian vape & liquid terbaik dari merek ternama!</p>
-        <a href="#produk" class="bg-white text-purple-700 font-semibold px-6 py-3 rounded shadow hover:bg-purple-100 transition">Lihat Produk</a>
+        <a href="#kategori" class="bg-white text-purple-700 font-semibold px-6 py-3 rounded shadow hover:bg-purple-100 transition glow">Lihat Kategori</a>
       </div>
     </section>
 
-    <!-- Produk -->
-    <section id="produk" class="max-w-6xl mx-auto py-16 px-4">
-      <h3 class="text-3xl font-bold mb-10 text-center text-purple-700" data-aos="fade-up">Produk Pilihan</h3>
-      <div class="grid md:grid-cols-3 gap-8">
-        <!-- Produk 1 -->
-        <div class="bg-white p-6 shadow-lg rounded-lg transform hover:scale-105 transition" data-aos="zoom-in-up">
-          <h4 class="font-bold text-xl mb-2">NOVA AIO</h4>
-          <p class="text-purple-600 font-semibold">Rp 780.000</p>
-          <a href="https://wa.me/6282277121630?text=Halo%20saya%20ingin%20pesan%20NOVA%20AIO" target="_blank" class="block mt-4 text-center bg-purple-600 text-white py-2 rounded hover:bg-purple-700">Beli via WhatsApp</a>
-          <img src="./d3201b98-9f71-43f6-aa49-7eb58721cdcf.jpeg" alt="NOVA AIO" class="mt-4 rounded shadow">
-        </div>
+    <!-- Filter -->
+    <div class="text-center mt-8">
+      <input type="text" placeholder="Cari produk..." x-model="filter" class="px-4 py-2 rounded border border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-500">
+    </div>
 
-        <!-- Produk 2 -->
-        <div class="bg-white p-6 shadow-lg rounded-lg transform hover:scale-105 transition" data-aos="zoom-in-up" data-aos-delay="100">
-          <h4 class="font-bold text-xl mb-2">XLIM Pro2</h4>
-          <p class="text-purple-600 font-semibold">Rp 320.000</p>
-          <a href="https://wa.me/6282277121630?text=Halo%20saya%20ingin%20pesan%20OXVA%20XLIM%20Pro2" target="_blank" class="block mt-4 text-center bg-purple-600 text-white py-2 rounded hover:bg-purple-700">Beli via WhatsApp</a>
-          <img src="./IMG_2080.jpeg" alt="XLIM Pro2" class="mt-4 rounded shadow">
-        </div>
-
-        <!-- Produk 3 -->
-        <div class="bg-white p-6 shadow-lg rounded-lg transform hover:scale-105 transition" data-aos="zoom-in-up" data-aos-delay="200">
-          <h4 class="font-bold text-xl mb-2">TRML T200</h4>
-          <p class="text-purple-600 font-semibold">Rp 600.000</p>
-          <a href="https://wa.me/6282277121630?text=Halo%20saya%20ingin%20pesan%20TRML" target="_blank" class="block mt-4 text-center bg-purple-600 text-white py-2 rounded hover:bg-purple-700">Beli via WhatsApp</a>
-          <img src="./IMG_3543.jpeg" alt="Artio Collection" class="mt-4 rounded shadow">
-        </div>
+    <!-- Kategori Produk -->
+    <section id="kategori" class="py-16 px-4">
+      <h3 class="text-3xl font-bold text-center text-purple-700 mb-10">Kategori Produk</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <template x-for="item in filteredItems()" :key="item">
+          <div class="bg-white p-4 rounded shadow hover:shadow-lg transition cursor-pointer transform hover:scale-105 duration-300" @click="openModal(item)">
+            <img :src="item.gambar" class="w-full h-32 object-cover rounded mb-2" alt="">
+            <h4 class="text-lg font-semibold text-purple-600" x-text="item.kategori"></h4>
+          </div>
+        </template>
       </div>
     </section>
 
-    <!-- Form Order / CTA -->
-    <section id="order" class="bg-gradient-to-r from-indigo-700 to-purple-700 py-16 px-4 text-center text-white">
-      <h3 class="text-3xl font-bold mb-4" data-aos="fade-down">Ingin Order Cepat?</h3>
-      <p class="mb-6">Klik tombol di bawah untuk langsung order via WhatsApp</p>
-      <a href="https://wa.me/6282277121630?text=Halo%20saya%20ingin%20order%20produk%20dari%20Bireuenvape" target="_blank" class="bg-green-500 text-white px-6 py-3 rounded hover:bg-green-600 transition">Chat Sekarang</a>
+    <!-- Modal Detail -->
+    <div x-show="showModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50" x-cloak>
+      <div class="bg-white p-6 rounded shadow-lg max-w-md w-full animate-fade-in-up" @click.away="showModal = false">
+        <img :src="modalData.gambar" class="mb-4 rounded">
+        <h3 class="text-xl font-bold text-purple-700 mb-2" x-text="modalData.kategori"></h3>
+        <p class="text-gray-600 mb-4" x-text="modalData.deskripsi"></p>
+        <button @click="addToCart(modalData)" class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700">Tambah ke Keranjang</button>
+      </div>
+    </div>
+
+    <!-- Checkout Sukses -->
+    <div x-show="checkoutSuccess" x-transition class="fixed top-4 right-4 bg-green-500 text-white px-4 py-2 rounded shadow-lg z-50" x-cloak>
+      Pesanan berhasil dikirim!
+    </div>
+
+    <!-- Keranjang -->
+    <section class="fixed bottom-4 right-4 z-50">
+      <button @click="checkout" class="bg-green-500 text-white px-4 py-2 rounded-full shadow-lg hover:bg-green-600">
+        🛒 Keranjang (<span x-text="cart.length"></span>)
+      </button>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white text-center py-6">
-      <p>&copy; 2025 Bireuenvape. All rights reserved.</p>
-      <p>Instagram: <a href="https://instagram.com/bireuenvape" target="_blank" class="underline">@bireuenvape</a> | WhatsApp: +62 822-7712-1630</p>
-    </footer>
+    <!-- Testimoni Dinamis -->
+    <section id="testimoni" class="py-16 px-4">
+      <h3 class="text-3xl font-bold text-center text-purple-700 mb-10">Testimoni Pengguna</h3>
+      <div class="grid md:grid-cols-3 gap-6">
+        <template x-for="t in testimonials" :key="t">
+          <div class="bg-white p-4 rounded shadow animate-fade-in-up">
+            <p class="text-gray-600 italic" x-text="t"></p>
+          </div>
+        </template>
+      </div>
+    </section>
+
+    <!-- Dashboard Admin -->
+    <section id="dashboard" class="py-16 px-4">
+      <h3 class="text-3xl font-bold text-center text-purple-700 mb-10">Dashboard Admin</h3>
+      <div class="bg-white p-4 rounded shadow">
+        <p>Total Produk: <span x-text="allItems.length"></span></p>
+        <p>Total Pesanan: <span x-text="cart.length"></span></p>
+      </div>
+    </section>
 
     <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        AOS.init({
-          duration: 1000,
-          once: true
-        });
-      });
+      AOS.init();
+
+      function shopData() {
+        return {
+          cart: [],
+          showModal: false,
+          modalData: {},
+          filter: '',
+          checkoutSuccess: false,
+          allItems: [
+            { kategori: 'Pod', deskripsi: 'Pod berkualitas tinggi dari berbagai merek', gambar: 'https://source.unsplash.com/200x150/?vape,pod' },
+            { kategori: 'Mod', deskripsi: 'Mod vape powerful dengan desain premium', gambar: 'https://source.unsplash.com/200x150/?vape,mod' },
+            { kategori: 'AIO', deskripsi: 'All-in-one vape praktis dan stylish', gambar: 'https://source.unsplash.com/200x150/?vape,aio' },
+            { kategori: 'Liquid Saltnic', deskripsi: 'Liquid saltnic nikmat dengan berbagai rasa', gambar: 'https://source.unsplash.com/200x150/?vape,saltnic' },
+            { kategori: 'Liquid Freebase', deskripsi: 'Liquid freebase dengan rasa kuat', gambar: 'https://source.unsplash.com/200x150/?vape,freebase' },
+            { kategori: 'Cartridge/Coil', deskripsi: 'Cartridge & coil original pengganti', gambar: 'https://source.unsplash.com/200x150/?vape,coil' },
+            { kategori: 'Atomizer', deskripsi: 'Atomizer berkualitas untuk pengalaman vaping maksimal', gambar: 'https://source.unsplash.com/200x150/?vape,atomizer' }
+          ],
+          testimonials: [
+            'Pengiriman cepat dan produk original!',
+            'Liquidnya mantap dan banyak pilihan!',
+            'Pelayanan ramah dan sangat membantu!'
+          ],
+          filteredItems() {
+            return this.filter ? this.allItems.filter(i => i.kategori.toLowerCase().includes(this.filter.toLowerCase())) : this.allItems;
+          },
+          openModal(item) {
+            this.modalData = item;
+            this.showModal = true;
+          },
+          addToCart(item) {
+            this.cart.push(item);
+            this.showModal = false;
+          },
+          checkout() {
+            if (this.cart.length === 0) return;
+            let pesan = 'Saya ingin memesan:\n';
+            this.cart.forEach((item, i) => {
+              pesan += `${i + 1}. ${item.kategori} - ${item.deskripsi}\n`;
+            });
+            window.open('https://wa.me/6282277121630?text=' + encodeURIComponent(pesan));
+            this.cart = [];
+            this.checkoutSuccess = true;
+            setTimeout(() => this.checkoutSuccess = false, 3000);
+          }
+        }
+      }
     </script>
   </body>
 </html>
+
